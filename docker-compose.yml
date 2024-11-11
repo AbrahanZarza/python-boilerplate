@@ -1,0 +1,15 @@
+services:
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${APP_NAME}
+    env_file:
+      - .env
+    volumes:
+      - ./src:/code
+    # keep running the application container.
+    # Set as 'false' if you want to stop the container after the application execution ends.
+    tty: true
+
+  # configure here all your project services
